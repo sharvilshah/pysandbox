@@ -25,7 +25,7 @@ def sqrt(number, accuracy=5):
 	# I can raise a value error here,
 	# but the convention seems to be to return NaN (not a number)
 	# NaN's are part of IEEE 754 floating point standard
-	# and are standard as og python 2.6
+	# and are standard as of python 2.6
 	if number < 0:
 		return float('nan')
 	
