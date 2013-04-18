@@ -15,8 +15,17 @@ def sqrt(number, accuracy=5):
  	we stop after reaching the desired tolerance.
  	The default tolerance is 10^(-5) digits
 	"""
+
+	try:
+		number = float(number)
+	except ValueError:
+		print "Input is not a number"
+		sys.exit(1)
+
 	# I can raise a value error here,
 	# but the convention seems to be to return NaN (not a number)
+	# NaN's are part of IEEE 754 floating point standard
+	# and are standard as og python 2.6
 	if number < 0:
 		return float('nan')
 	
@@ -33,4 +42,6 @@ def sqrt(number, accuracy=5):
 	return result
 
 if __name__ == '__main__':
-	print sqrt(float(sys.argv[1]))
+	if len(sys.argv) < 2:
+		sys.exit('Usage: %s <number>' % sys.argv[0])
+	print sqrt(sys.argv[1])
