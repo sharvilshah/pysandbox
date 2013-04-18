@@ -19,8 +19,7 @@ def sqrt(number, accuracy=5):
 	try:
 		number = float(number)
 	except ValueError:
-		print "Input is not a number"
-		sys.exit(1)
+		sys.exit('Input is not a number')
 
 	# I can raise a value error here,
 	# but the convention seems to be to return NaN (not a number)
